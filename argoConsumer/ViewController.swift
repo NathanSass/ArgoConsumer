@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var userEvents = ["Caitlyn's Birthday", "Marcus Wedding", "AKC Dog Show"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) ->
+        Int {
+            // Return the number of rows in the section.
+            return userEvents.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
+        NSIndexPath) -> UITableViewCell {
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier,
+                                                               forIndexPath: indexPath)
+        // Configure the cell...
+        cell.textLabel?.text = userEvents[indexPath.row]
+        return cell }
 
 
 }
