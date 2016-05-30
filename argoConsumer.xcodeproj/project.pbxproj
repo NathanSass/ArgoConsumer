@@ -16,6 +16,7 @@
 		0C398CDC1CF8E0E20076D308 /* argoConsumerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CDB1CF8E0E20076D308 /* argoConsumerUITests.swift */; };
 		0C398CF41CF8FE4C0076D308 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CF31CF8FE4C0076D308 /* EventTableViewController.swift */; };
 		0C398CF61CF8FEF10076D308 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CF51CF8FEF10076D308 /* EventTableViewCell.swift */; };
+		0C398CF81CFBD33B0076D308 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CF71CFBD33B0076D308 /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0C398CDD1CF8E0E20076D308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C398CF31CF8FE4C0076D308 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		0C398CF51CF8FEF10076D308 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		0C398CF71CFBD33B0076D308 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				0C398CBF1CF8E0E20076D308 /* argoConsumer.xcdatamodeld */,
 				0C398CF31CF8FE4C0076D308 /* EventTableViewController.swift */,
 				0C398CF51CF8FEF10076D308 /* EventTableViewCell.swift */,
+				0C398CF71CFBD33B0076D308 /* EventDetailViewController.swift */,
 			);
 			path = argoConsumer;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C398CF61CF8FEF10076D308 /* EventTableViewCell.swift in Sources */,
+				0C398CF81CFBD33B0076D308 /* EventDetailViewController.swift in Sources */,
 				0C398CC11CF8E0E20076D308 /* argoConsumer.xcdatamodeld in Sources */,
 				0C398CF41CF8FE4C0076D308 /* EventTableViewController.swift in Sources */,
 				0C398CB91CF8E0E10076D308 /* AppDelegate.swift in Sources */,

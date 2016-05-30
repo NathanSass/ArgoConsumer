@@ -10,7 +10,7 @@ import UIKit
 
 class EventTableViewController: UITableViewController {
 
-    var eventArr = ["a", "b", "c"]
+    var eventArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,14 +86,30 @@ class EventTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showEventDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destinationViewController as! EventDetailViewController
+                destinationController.eventDetailTitle = eventArr[indexPath.row]
+            }
+        }
     }
-    */
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showRestaurantDetail" {
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                let destinationController = segue.destinationViewController as!
+//                RestaurantDetailViewController
+//                destinationController.restaurantImage =
+//                    restaurantImages[indexPath.row]
+//            }
+//        } }
 
 }

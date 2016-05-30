@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3tg-v9-LST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JRp-X7-eHg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Event Table View Controller-->
+        <!--Events-->
         <scene sceneID="hni-tT-Rpm">
             <objects>
-                <tableViewController id="3tg-v9-LST" customClass="EventTableViewController" customModule="argoConsumer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Events" id="3tg-v9-LST" customClass="EventTableViewController" customModule="argoConsumer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9cm-Mk-ZIF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Ih3-Ma-WTL" style="IBUITableViewCellStyleDefault" id="ppu-bY-Yz0" customClass="EventTableViewCell" customModule="argoConsumer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ppu-bY-Yz0" id="tRD-LZ-1BO">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -32,6 +32,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eventTitleLabel" destination="Ih3-Ma-WTL" id="KjP-xt-UTr"/>
+                                    <segue destination="rdP-tO-T5x" kind="show" identifier="showEventDetail" id="BJI-3H-I0L"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -40,8 +41,56 @@
                             <outlet property="delegate" destination="3tg-v9-LST" id="uqg-qr-jPx"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Events" id="r3F-UL-XHc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTp-Jw-bxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="177"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="84T-Vu-NjK">
+            <objects>
+                <viewController id="rdP-tO-T5x" customClass="EventDetailViewController" customModule="argoConsumer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zc8-57-4sE"/>
+                        <viewControllerLayoutGuide type="bottom" id="mji-J3-BpQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sh7-gb-7sw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-Ve-ecT">
+                                <rect key="frame" x="240" y="289" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="eventDetailTitleLabel" destination="v8O-Ve-ecT" id="bTs-Iv-Dbl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIP-s8-mt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="177"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3rG-5r-qc2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRp-X7-eHg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="33s-Pa-BkP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3tg-v9-LST" kind="relationship" relationship="rootViewController" id="Sop-2M-aXG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyS-XD-fd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="181" y="177"/>
         </scene>
