@@ -39,14 +39,27 @@ class EventTableViewController: UITableViewController {
                     let response = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                     
                     
-                    let event = response[0]
+                    var events: [AnyObject] = []
                     
-                    guard let name = event["name"] as? String,
-                        let id = event["id"] as? Int else {
-                            return;
+                    for event in response {
+        
+                        guard let name = event["name"] as? String,
+                            let id = event["id"] as? Int else {
+                                return;
+                        }
+                        
+                        let currentEvent = [
+                            "id": id,
+                            "name": name
+                        ]
+                        
+                        events.append(currentEvent)
+//                        print("eventName: \(name), eventId: \(id)")
                     }
                     
-                    print("eventName: \(name), eventId: \(id)")
+                    print(events)
+                    
+                    
 
                     
                     // Update the label
