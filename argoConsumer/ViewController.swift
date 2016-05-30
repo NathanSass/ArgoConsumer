@@ -36,7 +36,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                                                                forIndexPath: indexPath)
         // Configure the cell...
         cell.textLabel?.text = userEvents[indexPath.row]
-        return cell }
+        return cell
+    }
+    
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
 
 }
