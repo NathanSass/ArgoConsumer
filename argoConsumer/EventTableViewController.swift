@@ -14,10 +14,11 @@ class EventTableViewController: UITableViewController {
     
     func updateIP() {
         
-        // Setup the session to make REST GET call.  Notice the URL is https NOT http!!
-        let postEndpoint: String = "http://localhost:3000/api/user/500/events"
+        // Setup the session to make REST GET call.
+        let userID = "12"
+        let getEndpoint = "http://localhost:3000/api/user/" + userID + "/events"
         let session = NSURLSession.sharedSession()
-        let url = NSURL(string: postEndpoint)!
+        let url = NSURL(string: getEndpoint)!
         
         // Make the POST call and handle it in a completion handler
         session.dataTaskWithURL(url, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
@@ -32,11 +33,21 @@ class EventTableViewController: UITableViewController {
             do {
                 if let ipString = NSString(data:data!, encoding: NSUTF8StringEncoding) {
                     // Print what we got from the call
-                    print(ipString)
+//                    print(ipString)
                     
                     // Parse the JSON to get the IP
-//                    let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-//                    let origin = jsonDictionary["origin"] as! String
+                    let response = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+                    
+                    
+                    let event = response[0]
+                    
+                    guard let name = event["name"] as? String,
+                        let id = event["id"] as? Int else {
+                            return;
+                    }
+                    
+                    print("eventName: \(name), eventId: \(id)")
+
                     
                     // Update the label
 //                    self.performSelectorOnMainThread("updateIPLabel:", withObject: origin, waitUntilDone: false)
