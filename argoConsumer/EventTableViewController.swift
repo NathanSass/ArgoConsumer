@@ -10,11 +10,20 @@ import UIKit
 
 class EventTableViewController: UITableViewController {
 
-    var eventArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
+//    var eventArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
+    
+    var eventArr = [
+        [
+            "id": 87,
+            "name": "Preloaded event",
+            "street": "1234 Farm street",
+            "place": "Farmville",
+            "costSplit": "private"
+        ]
+    ]
     
     func updateIP() {
         
-        // Setup the session to make REST GET call.
         let userID = "12"
         let getEndpoint = "http://localhost:3000/api/user/" + userID + "/events"
         let session = NSURLSession.sharedSession()
@@ -39,28 +48,33 @@ class EventTableViewController: UITableViewController {
                     let response = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                     
                     
-                    var events: [AnyObject] = []
+                    var events: [Dictionary<String, NSObject>] = []
                     
                     for event in response {
         
                         guard let name = event["name"] as? String,
-                            let id = event["id"] as? Int else {
+                            let id = event["id"] as? Int,
+                            let street = event["street"] as? String,
+                            let costSplit = event["cost_split"] as? String,
+                            let place = event["place"] as? String else {
                                 return;
                         }
                         
                         let currentEvent = [
                             "id": id,
-                            "name": name
+                            "name": name,
+                            "street": street,
+                            "place": place,
+                            "costSplit": costSplit
                         ]
                         
-                        events.append(currentEvent)
-//                        print("eventName: \(name), eventId: \(id)")
+                        events.append(currentEvent as! Dictionary<String, NSObject>)
                     }
+                    self.eventArr = events
                     
                     print(events)
                     
-                    
-
+                    self.tableView.reloadData()
                     
                     // Update the label
 //                    self.performSelectorOnMainThread("updateIPLabel:", withObject: origin, waitUntilDone: false)
@@ -75,6 +89,7 @@ class EventTableViewController: UITableViewController {
         super.viewDidLoad()
 
         updateIP()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -105,7 +120,10 @@ class EventTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier,
                                                                forIndexPath: indexPath) as! EventTableViewCell
         // Configure the cell...
-        cell.eventTitleLabel.text = eventArr[indexPath.row]
+        cell.eventTitleLabel.text = eventArr[indexPath.row]["name"] as? String
+        cell.eventStreetLabel.text = eventArr[indexPath.row]["street"] as? String
+        cell.eventPlaceLabel.text = eventArr[indexPath.row]["place"] as? String
+        cell.eventCostSplitLabel.text = eventArr[indexPath.row]["costSplit"] as? String
         
         return cell
     }
@@ -157,7 +175,7 @@ class EventTableViewController: UITableViewController {
         if segue.identifier == "showEventDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! EventDetailViewController
-                destinationController.eventDetailTitle = eventArr[indexPath.row]
+//                destinationController.eventDetailTitle = eventArr[indexPath.row]
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1D5E981CFD296D00DE27C1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1D5E971CFD296D00DE27C1 /* Default-568h@2x.png */; };
 		0C398CB91CF8E0E10076D308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CB81CF8E0E10076D308 /* AppDelegate.swift */; };
 		0C398CBE1CF8E0E20076D308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C398CBC1CF8E0E20076D308 /* Main.storyboard */; };
 		0C398CC11CF8E0E20076D308 /* argoConsumer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CBF1CF8E0E20076D308 /* argoConsumer.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1D5E971CFD296D00DE27C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0C398CB51CF8E0E10076D308 /* argoConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = argoConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C398CB81CF8E0E10076D308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C398CBD1CF8E0E20076D308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		0C398CAC1CF8E0E10076D308 = {
 			isa = PBXGroup;
 			children = (
+				0C1D5E971CFD296D00DE27C1 /* Default-568h@2x.png */,
 				0C398CB71CF8E0E10076D308 /* argoConsumer */,
 				0C398CCF1CF8E0E20076D308 /* argoConsumerTests */,
 				0C398CDA1CF8E0E20076D308 /* argoConsumerUITests */,
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C398CC61CF8E0E20076D308 /* LaunchScreen.storyboard in Resources */,
+				0C1D5E981CFD296D00DE27C1 /* Default-568h@2x.png in Resources */,
 				0C398CC31CF8E0E20076D308 /* Assets.xcassets in Resources */,
 				0C398CBE1CF8E0E20076D308 /* Main.storyboard in Resources */,
 			);
@@ -494,6 +498,7 @@
 				0C398CE21CF8E0E20076D308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C398CE31CF8E0E20076D308 /* Build configuration list for PBXNativeTarget "argoConsumerTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +507,7 @@
 				0C398CE51CF8E0E20076D308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C398CE61CF8E0E20076D308 /* Build configuration list for PBXNativeTarget "argoConsumerUITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +516,7 @@
 				0C398CE81CF8E0E20076D308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -11,6 +11,9 @@ import UIKit
 class EventTableViewCell: UITableViewCell {
 
     @IBOutlet var eventTitleLabel: UILabel!
+    @IBOutlet var eventStreetLabel: UILabel!
+    @IBOutlet var eventPlaceLabel: UILabel!
+    @IBOutlet var eventCostSplitLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
