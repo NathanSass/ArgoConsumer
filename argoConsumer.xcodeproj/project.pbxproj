@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C1D5E981CFD296D00DE27C1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C1D5E971CFD296D00DE27C1 /* Default-568h@2x.png */; };
+		0C1D5E9C1D0071FA00DE27C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D5E9B1D0071FA00DE27C1 /* LoginViewController.swift */; };
 		0C398CB91CF8E0E10076D308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CB81CF8E0E10076D308 /* AppDelegate.swift */; };
 		0C398CBE1CF8E0E20076D308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C398CBC1CF8E0E20076D308 /* Main.storyboard */; };
 		0C398CC11CF8E0E20076D308 /* argoConsumer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C398CBF1CF8E0E20076D308 /* argoConsumer.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0C1D5E971CFD296D00DE27C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0C1D5E9B1D0071FA00DE27C1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0C398CB51CF8E0E10076D308 /* argoConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = argoConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C398CB81CF8E0E10076D308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C398CBD1CF8E0E20076D308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				0C398CF31CF8FE4C0076D308 /* EventTableViewController.swift */,
 				0C398CF51CF8FEF10076D308 /* EventTableViewCell.swift */,
 				0C398CF71CFBD33B0076D308 /* EventDetailViewController.swift */,
+				0C1D5E9B1D0071FA00DE27C1 /* LoginViewController.swift */,
 			);
 			path = argoConsumer;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1D5E9C1D0071FA00DE27C1 /* LoginViewController.swift in Sources */,
 				0C398CF61CF8FEF10076D308 /* EventTableViewCell.swift in Sources */,
 				0C398CF81CFBD33B0076D308 /* EventDetailViewController.swift in Sources */,
 				0C398CC11CF8E0E20076D308 /* argoConsumer.xcdatamodeld in Sources */,

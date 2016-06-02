@@ -74,7 +74,10 @@ class EventTableViewController: UITableViewController {
                     
                     print(events)
                     
-                    self.tableView.reloadData()
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                        return
+                    })
                     
                     // Update the label
 //                    self.performSelectorOnMainThread("updateIPLabel:", withObject: origin, waitUntilDone: false)
@@ -175,7 +178,10 @@ class EventTableViewController: UITableViewController {
         if segue.identifier == "showEventDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! EventDetailViewController
-//                destinationController.eventDetailTitle = eventArr[indexPath.row]
+//                var event = eventArr[indexPath.row]
+//                print(eventArr[indexPath.row]["name"])
+                destinationController.event = eventArr[indexPath.row]
+//                destinationController.eventDetailTitle = (eventArr[indexPath.row]["name"] as? String)!
             }
         }
     }

@@ -1,29 +1,21 @@
 //
-//  EventDetailViewController.swift
+//  LoginViewController.swift
 //  argoConsumer
 //
-//  Created by Nathan Sass on 5/29/16.
+//  Created by Nathan Sass on 6/2/16.
 //  Copyright © 2016 RideArgo. All rights reserved.
 //
 
 import UIKit
 
-class EventDetailViewController: UIViewController {
-    
-    @IBOutlet var eventDetailTitleLabel: UILabel!
-    @IBOutlet var eventDetailStreetLabel: UILabel!
-    @IBOutlet var eventDetailPlaceLabel: UILabel!
-    @IBOutlet var eventDetailCostLabel: UILabel!
-    
-    var event = [String: NSObject]()
+class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var messageLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        eventDetailTitleLabel.text = event["name"] as? String
-        eventDetailStreetLabel.text = event["street"] as? String
-        eventDetailPlaceLabel.text = event["place"] as? String
-        eventDetailCostLabel.text = event["costSplit"] as? String
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +24,17 @@ class EventDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func submitButtonClick(sender: AnyObject) {
+        let u = "user"
+        let p = "123"
+        
+        if (usernameTextField.text == u && passwordTextField.text == p) {
+            
+            print("Correct")
+        } else {
+            print("false")
+        }
+    }
 
     /*
     // MARK: - Navigation
