@@ -28,11 +28,11 @@ class LoginViewController: UIViewController {
         let u = "user"
         let p = "123"
         
-        if (usernameTextField.text == u && passwordTextField.text == p) {
-            
-            print("Correct")
+        
+        if ( usernameTextField.text == u && passwordTextField.text == p ) {
+            performSegueWithIdentifier("loginSuccess", sender: nil)
         } else {
-            print("false")
+            messageLabel.text = "Incorrect Details"
         }
     }
 

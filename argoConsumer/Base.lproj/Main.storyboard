@@ -139,6 +139,7 @@
                         <outlet property="messageLabel" destination="gfq-n2-ZZ9" id="UGb-GM-moJ"/>
                         <outlet property="passwordTextField" destination="6Pm-TF-o9W" id="9ZF-ZC-lNu"/>
                         <outlet property="usernameTextField" destination="wWQ-Ib-ozi" id="Bmt-ts-RAy"/>
+                        <segue destination="JRp-X7-eHg" kind="show" identifier="loginSuccess" id="5Ci-Cq-876"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AqG-2X-Q4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
