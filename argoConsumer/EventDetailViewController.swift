@@ -19,7 +19,7 @@ class EventDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         eventDetailTitleLabel.text = event["name"] as? String
         eventDetailStreetLabel.text = event["street"] as? String
         eventDetailPlaceLabel.text = event["place"] as? String

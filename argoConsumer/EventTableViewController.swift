@@ -9,8 +9,6 @@
 import UIKit
 
 class EventTableViewController: UITableViewController {
-
-//    var eventArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
     
     var eventArr = [
         [
@@ -123,6 +121,7 @@ class EventTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier,
                                                                forIndexPath: indexPath) as! EventTableViewCell
         // Configure the cell...
+        
         cell.eventTitleLabel.text = eventArr[indexPath.row]["name"] as? String
         cell.eventStreetLabel.text = eventArr[indexPath.row]["street"] as? String
         cell.eventPlaceLabel.text = eventArr[indexPath.row]["place"] as? String
