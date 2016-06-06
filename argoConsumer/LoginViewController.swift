@@ -30,10 +30,15 @@ class LoginViewController: UIViewController {
         
         
         if ( usernameTextField.text == u && passwordTextField.text == p ) {
-            performSegueWithIdentifier("loginSuccess", sender: nil)
+            // segue should go here
         } else {
             messageLabel.text = "Incorrect Details"
         }
+        
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
+        performSegueWithIdentifier("loginSuccess", sender: nil)
     }
 
     /*

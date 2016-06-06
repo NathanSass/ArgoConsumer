@@ -39,8 +39,6 @@ class EventTableViewController: UITableViewController {
             // Read the JSON
             do {
                 if let ipString = NSString(data:data!, encoding: NSUTF8StringEncoding) {
-                    // Print what we got from the call
-//                    print(ipString)
                     
                     // Parse the JSON to get the IP
                     let response = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
@@ -48,29 +46,35 @@ class EventTableViewController: UITableViewController {
                     
                     var events: [Dictionary<String, NSObject>] = []
                     
+                    
                     for event in response {
-        
+
+                        
                         guard let name = event["name"] as? String,
                             let id = event["id"] as? Int,
                             let street = event["street"] as? String,
                             let costSplit = event["cost_split"] as? String,
+//                            let startDate = event["start_date"] as? NSDate,
                             let place = event["place"] as? String else {
                                 return;
                         }
+
                         
                         let currentEvent = [
                             "id": id,
                             "name": name,
                             "street": street,
+//                            "startDate": startDate,
                             "place": place,
                             "costSplit": costSplit
                         ]
+
                         
-                        events.append(currentEvent as! Dictionary<String, NSObject>)
+                        events.append(currentEvent as! Dictionary<String, NSObject> )
                     }
+                    
                     self.eventArr = events
                     
-                    print(events)
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         self.tableView.reloadData()
@@ -78,7 +82,6 @@ class EventTableViewController: UITableViewController {
                     })
                     
                     // Update the label
-//                    self.performSelectorOnMainThread("updateIPLabel:", withObject: origin, waitUntilDone: false)
                 }
             } catch {
                 print("bad things happened")
@@ -123,9 +126,8 @@ class EventTableViewController: UITableViewController {
         // Configure the cell...
         
         cell.eventTitleLabel.text = eventArr[indexPath.row]["name"] as? String
-        cell.eventStreetLabel.text = eventArr[indexPath.row]["street"] as? String
         cell.eventPlaceLabel.text = eventArr[indexPath.row]["place"] as? String
-        cell.eventCostSplitLabel.text = eventArr[indexPath.row]["costSplit"] as? String
+        // Add date here
         
         return cell
     }
